@@ -7,7 +7,7 @@ const requestGetEndPoint = "/grid/get";
 const requestPlaceEndPoint = "/app/grid/place";
 const subscribePixelUpdateEndPoint = "/topic/pixel_update";
 const subscribeFullUpdateEndPoint = "/topic/full_update";
-const connectionAttemptsDelay = 2500;//ms
+const connectionAttemptsDelay = 500;//ms
 var isConnected = false;
 
 var stompClient = null;
