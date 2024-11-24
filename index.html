@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #fff;
+        font-family: "Press Start 2P", monospace;
+      }
+
+      /* Moving Banner */
+      .banner {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: black;
+        color: white;
+        overflow: hidden;
+        z-index: 20;
+      }
+
+      .banner-text {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scroll 60s linear infinite;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+
+      .banner-text span {
+        margin-right: 30px;
+      }
+
+      /* Stop scrolling on hover */
+      .banner:hover .banner-text {
+        animation-play-state: paused;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .grid-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 10px);
+        grid-auto-rows: 10px;
+        z-index: 0;
+      }
+
+      .grid-item {
+        border: 0.1px solid #eee;
+        background-color: transparent;
+      }
+
+      .logo {
+        margin-top: 60px;
+        width: 480px;
+        height: 140px;
+        z-index: 10;
+      }
+
+      .text-container {
+        margin-top: 20px;
+        z-index: 10;
+        width: 800px;
+        color: #333;
+        font-size: 20px;
+        line-height: 40px;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+
+      .highlight {
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      .button-container {
+        margin-top: 20px;
+        z-index: 10;
+        text-align: center;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 16px;
+        font-family: "Press Start 2P", monospace;
+        color: white;
+        background-color: #333;
+        border: 3px solid #444;
+        text-decoration: none;
+        box-shadow: 4px 4px 0px #000;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      .button:hover {
+        background-color: #ff7e5f;
+        border-color: #feb47b;
+        color: black;
+        box-shadow: 6px 6px 0px #222;
+        transform: translateY(-2px);
+      }
+
+      .social-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .social-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-family: "Press Start 2P", monospace;
+        color: white;
+        background-color: #555;
+        border: 3px solid #666;
+        text-decoration: none;
+        box-shadow: 4px 4px 0px #000;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .social-button:hover {
+        background-color: #1da1f2;
+        border-color: #0088cc;
+        color: white;
+        box-shadow: 6px 6px 0px #222;
+        transform: translateY(-2px);
+      }
+
+      .controls {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 30;
+        background: #fff;
+        padding: 10px;
+        border: 3px solid #444;
+        box-shadow: 4px 4px 0px #000;
+        color: black;
+        font-family: "Press Start 2P", monospace;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .controls select,
+      .controls button,
+      .controls input[type="radio"] {
+        font-family: "Press Start 2P", monospace;
+        font-size: 10px;
+        padding: 3px;
+        background: #444;
+        color: white;
+        border: 3px solid #555;
+        cursor: pointer;
+      }
+
+      .controls label {
+        font-size: 10px;
+      }
+
+      @media (max-width: 480px) {
+        .logo {
+          width: 100%;
+          height: auto;
+        }
+        .text-container {
+          width: 100%;
+          font-size: 10px;
+          line-height: 20px;
+        }
+        .button {
+          font-size: 12px;
+          padding: 10px 20px;
+        }
+        .social-button {
+          font-size: 10px;
+          padding: 8px 16px;
+        }
+        .controls {
+          bottom: 20px;
+          flex-direction: row;
+          gap: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Moving Banner -->
+    <div class="banner">
+      <div class="banner-text" style="animation-delay: -25s">
+        <span
+          >We're currently rebuilding the website. It will have much better
+          performance and features soon!
+        </span>
+        <span
+          >We're currently rebuilding the website. It will have much better
+          performance and features soon!
+        </span>
+      </div>
+    </div>
+
+    <!-- Full-page grid -->
+    <div class="grid-container">
+      <script>
+        const gridContainer = document.querySelector(".grid-container");
+        const cols = Math.floor(window.innerWidth / 10);
+        const rows = Math.floor(window.innerHeight / 10);
+
+        // Load saved grid data from localStorage
+        const savedGrid = JSON.parse(localStorage.getItem("gridState")) || [];
+
+        // Create grid cells
+        const gridState = new Array(cols * rows).fill("");
+        let brushSize = 1;
+        let brushColor = "multicolor";
+        const colors = [
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "blue",
+          "purple",
+          "black",
+        ];
+
+        function createGrid() {
+          gridContainer.innerHTML = "";
+          for (let i = 0; i < cols * rows; i++) {
+            const gridItem = document.createElement("div");
+            gridItem.classList.add("grid-item");
+            gridContainer.appendChild(gridItem);
+
+            // Restore saved color
+            if (savedGrid[i]) {
+              gridItem.style.backgroundColor = savedGrid[i];
+            }
+
+            gridItem.addEventListener("mouseover", (event) => {
+              if (isDrawing) {
+                let color;
+                if (brushColor === "multicolor") {
+                  color = `hsl(${Math.random() * 360}, 70%, 50%)`;
+                } else {
+                  color = brushColor;
+                }
+
+                for (let b = 0; b < brushSize; b++) {
+                  if (gridContainer.children[i + b]) {
+                    gridContainer.children[i + b].style.backgroundColor = color;
+                    gridState[i + b] = color;
+                  }
+                }
+                saveGridState();
+              }
+            });
+          }
+        }
+
+        createGrid();
+
+        window.addEventListener("resize", () => {
+          // Recalculate columns and rows on resize
+          const newCols = Math.floor(window.innerWidth / 10);
+          const newRows = Math.floor(window.innerHeight / 10);
+
+          if (newCols * newRows !== cols * rows) {
+            location.reload();
+          }
+        });
+
+        // Save grid state to localStorage
+        function saveGridState() {
+          localStorage.setItem("gridState", JSON.stringify(gridState));
+        }
+
+        // Handle drawing
+        let isDrawing = false;
+        gridContainer.addEventListener("mousedown", () => (isDrawing = true));
+        gridContainer.addEventListener("mouseup", () => (isDrawing = false));
+
+        // Clear canvas
+        function clearCanvas() {
+          for (let i = 0; i < gridState.length; i++) {
+            gridContainer.children[i].style.backgroundColor = "transparent";
+            gridState[i] = "";
+          }
+          saveGridState();
+        }
+
+        // Brush size change
+        function changeBrushSize(size) {
+          brushSize = parseInt(size);
+        }
+
+        // Brush color change
+        function changeBrushColor(color) {
+          brushColor = color;
+        }
+
+        // Automatic drawing
+        function autoDraw() {
+          const randomIndex = Math.floor(Math.random() * gridState.length);
+          const gridItem = gridContainer.children[randomIndex];
+          const color = `hsl(${Math.random() * 360}, 70%, 50%)`;
+          gridItem.style.backgroundColor = color;
+          gridState[randomIndex] = color;
+          saveGridState();
+        }
+
+        setInterval(autoDraw, 1000); // Draw automatically every second
+      </script>
+    </div>
+
+    <!-- Logo -->
+    <img src="logo.svg" alt="Logo" class="logo" />
+
+    <!-- Pixelized Text -->
+    <div class="text-container">
+      A decentralized pixel-art battleground on the Solana blockchain <br />
+      Create and compete in a shared canvas where every pixel matters
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-container">
+      <a
+        href="https://dexscreener.com/solana/gr5q4l3daaue8wxgt5w92chbzblczkvjazo4uibibtqk"
+        target="_blank"
+        class="button"
+        >Buy $PAINT on DEX</a
+      >
+      <div class="social-buttons">
+        <a
+          href="https://x.com/PaintWithSolana"
+          target="_blank"
+          class="social-button"
+          >X (Twitter)</a
+        >
+        <a href="https://t.me/PAINTcto" target="_blank" class="social-button"
+          >Telegram</a
+        >
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <label for="brush-size">Brush Size:</label>
+      <select id="brush-size" onchange="changeBrushSize(this.value)">
+        <option value="1">1px</option>
+        <option value="2">2px</option>
+        <option value="4">4px</option>
+      </select>
+      <label for="brush-color">Brush Color:</label>
+      <select id="brush-color" onchange="changeBrushColor(this.value)">
+        <option value="multicolor">Multicolor</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+        <option value="black">Black</option>
+      </select>
+      <button onclick="clearCanvas()">Clear</button>
+    </div>
+  </body>
+</html>

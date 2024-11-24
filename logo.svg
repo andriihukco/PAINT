@@ -1,0 +1,124 @@
+<svg width="480" height="140" viewBox="0 0 480 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_12_249)">
+<path d="M245 50V45H240H230H225V50V130V135H230H240H245V130V50Z" fill="#162FFD" stroke="#FEAA12" stroke-width="10" stroke-linecap="square"/>
+<mask id="path-2-outside-1_12_249" maskUnits="userSpaceOnUse" x="390" y="20" width="90" height="120" fill="black">
+<rect fill="white" x="390" y="20" width="90" height="120"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M470 30H400V40H430V130H440V40H470V30Z"/>
+</mask>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M470 30H400V40H430V130H440V40H470V30Z" fill="#33E0FE"/>
+<path d="M400 30V20H390V30H400ZM470 30H480V20H470V30ZM400 40H390V50H400V40ZM430 40H440V30H430V40ZM430 130H420V140H430V130ZM440 130V140H450V130H440ZM440 40V30H430V40H440ZM470 40V50H480V40H470ZM400 40H470V20H400V40ZM410 40V30H390V40H410ZM430 30H400V50H430V30ZM440 130V40H420V130H440ZM440 120H430V140H440V120ZM430 40V130H450V40H430ZM470 30H440V50H470V30ZM460 30V40H480V30H460Z" fill="#F30C7B" mask="url(#path-2-outside-1_12_249)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 30H80V90H20V130H10L10 30ZM20 80H70V40H20V80Z" fill="#951BFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 20H90V100H30V140H0V20ZM30 70H60V50H30V70ZM10 30V130H20V90H80V30H10ZM20 80V40H70V80H20ZM0 20H10V30H0V20ZM80 20H90V30H80V20ZM90 90H80V100H90V90Z" fill="#FE19F7"/>
+<path d="M230 10H240V20H230V10Z" fill="#162FFD"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M220 0H250V30H220V0ZM240 10H230V20H240V10ZM240 0H250V10H240V0ZM230 20H220V30H230V20ZM250 20H240V30H250V20ZM230 0H220V10H230V0Z" fill="#FEAA12"/>
+<rect x="280" y="120" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="130" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="130" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="120" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="110" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="100" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="90" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="80" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="70" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="60" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="50" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="40" width="10" height="10" fill="#0BA62C"/>
+<rect x="300" y="60" width="10" height="10" fill="#0BA62C"/>
+<rect x="310" y="80" width="10" height="10" fill="#0BA62C"/>
+<rect x="320" y="100" width="10" height="10" fill="#0BA62C"/>
+<rect x="330" y="120" width="10" height="10" fill="#0BA62C"/>
+<rect x="300" y="70" width="10" height="10" fill="#0BA62C"/>
+<rect x="310" y="90" width="10" height="10" fill="#0BA62C"/>
+<rect x="320" y="110" width="10" height="10" fill="#0BA62C"/>
+<rect x="330" y="130" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="130" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="120" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="110" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="100" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="90" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="80" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="70" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="60" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="50" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="40" width="10" height="10" fill="#0BA62C"/>
+<rect x="360" y="30" width="10" height="10" fill="#0BA62C"/>
+<rect x="350" y="20" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="20" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="30" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="40" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="50" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="60" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="70" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="80" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="90" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="100" width="10" height="10" fill="#0BA62C"/>
+<rect x="330" y="90" width="10" height="10" fill="#0BA62C"/>
+<rect x="330" y="80" width="10" height="10" fill="#0BA62C"/>
+<rect x="320" y="70" width="10" height="10" fill="#0BA62C"/>
+<rect x="310" y="50" width="10" height="10" fill="#0BA62C"/>
+<rect x="300" y="30" width="10" height="10" fill="#0BA62C"/>
+<rect x="320" y="60" width="10" height="10" fill="#0BA62C"/>
+<rect x="310" y="40" width="10" height="10" fill="#0BA62C"/>
+<rect x="290" y="20" width="10" height="10" fill="#0BA62C"/>
+<rect x="280" y="20" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="30" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="40" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="50" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="60" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="70" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="80" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="90" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="100" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="110" width="10" height="10" fill="#0BA62C"/>
+<rect x="270" y="120" width="10" height="10" fill="#0BA62C"/>
+<rect x="340" y="110" width="10" height="10" fill="#0BA62C"/>
+<rect x="280" y="110" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="100" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="90" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="80" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="70" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="60" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="50" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="40" width="10" height="10" fill="#FB19EA"/>
+<rect x="280" y="30" width="10" height="10" fill="#FB19EA"/>
+<rect x="290" y="30" width="10" height="10" fill="#FB19EA"/>
+<rect x="300" y="40" width="10" height="10" fill="#FB19EA"/>
+<rect x="310" y="60" width="10" height="10" fill="#FB19EA"/>
+<rect x="320" y="80" width="10" height="10" fill="#FB19EA"/>
+<rect x="330" y="100" width="10" height="10" fill="#FB19EA"/>
+<rect x="340" y="120" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="120" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="110" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="100" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="90" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="80" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="70" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="60" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="50" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="40" width="10" height="10" fill="#FB19EA"/>
+<rect x="350" y="30" width="10" height="10" fill="#FB19EA"/>
+<rect x="300" y="50" width="10" height="10" fill="#FB19EA"/>
+<rect x="310" y="70" width="10" height="10" fill="#FB19EA"/>
+<rect x="320" y="90" width="10" height="10" fill="#FB19EA"/>
+<rect x="330" y="110" width="10" height="10" fill="#FB19EA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M160 30H140V40H130V70H120V100H110V130H120V100H130V90H170V100H180V130H190V100H180V70H170V40H160V30ZM160 70H170V80H130V70H140V60V50H150H160V60V70Z" fill="#D9D9D9"/>
+<mask id="path-99-outside-2_12_249" maskUnits="userSpaceOnUse" x="100" y="20" width="100" height="120" fill="black">
+<rect fill="white" x="100" y="20" width="100" height="120"/>
+<path d="M140 30H160V40H170V70H130V40H140V30Z"/>
+<path d="M120 100V70H130V80H170V70H180V100H170V90H130V100H120Z"/>
+<path d="M120 100V130H110V100H120Z"/>
+<path d="M180 100H190V130H180V100Z"/>
+</mask>
+<path d="M140 30H160V40H170V70H130V40H140V30Z" fill="#9BF715"/>
+<path d="M120 100V70H130V80H170V70H180V100H170V90H130V100H120Z" fill="#9BF715"/>
+<path d="M120 100V130H110V100H120Z" fill="#9BF715"/>
+<path d="M180 100H190V130H180V100Z" fill="#9BF715"/>
+<path d="M140 30V20H130V30H140ZM160 30H170V20H160V30ZM160 40H150V50H160V40ZM170 40H180V30H170V40ZM130 40V30H120V40H130ZM140 40V50H150V40H140ZM120 70V60H110V70H120ZM130 80H120V90H130V80ZM170 80V90H180V80H170ZM180 70H190V60H180V70ZM170 100H160V110H170V100ZM170 90H180V80H170V90ZM130 90V80H120V90H130ZM130 100V110H140V100H130ZM120 130V140H130V130H120ZM110 130H100V140H110V130ZM110 100V90H100V100H110ZM190 100H200V90H190V100ZM190 130V140H200V130H190ZM180 130H170V140H180V130ZM150 30V40H170V30H150ZM170 30H160V50H170V30ZM180 70V40H160V70H180ZM170 60H130V80H170V60ZM120 40V70H140V40H120ZM140 30H130V50H140V30ZM130 30V40H150V30H130ZM110 70V100H130V70H110ZM130 60H120V80H130V60ZM120 70V80H140V70H120ZM130 90H170V70H130V90ZM180 80V70H160V80H180ZM180 60H170V80H180V60ZM190 100V70H170V100H190ZM170 110H180V90H170V110ZM160 90V100H180V90H160ZM130 100H170V80H130V100ZM140 100V90H120V100H140ZM120 110H130V90H120V110ZM130 130V100H110V130H130ZM110 140H120V120H110V140ZM100 100V130H120V100H100ZM120 90H110V110H120V90ZM190 90H180V110H190V90ZM200 130V100H180V130H200ZM180 140H190V120H180V140ZM170 100V130H190V100H170ZM160 20H140V40H160V20Z" fill="#185385" mask="url(#path-99-outside-2_12_249)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M140 50H150H160V60V70H150H140V60V50Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_12_249">
+<rect width="480" height="140" fill="white"/>
+</clipPath>
+</defs>
+</svg>
