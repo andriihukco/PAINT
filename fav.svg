@@ -1,0 +1,34 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_15_11095)">
+<rect width="200" height="200" rx="32" fill="white"/>
+<path d="M0 0V200" stroke="#EEEEEE"/>
+<path d="M200 0L-1.49012e-06 -8.74228e-06" stroke="#EEEEEE"/>
+<path d="M20 0V200" stroke="#EEEEEE"/>
+<path d="M200 20L-1.49012e-06 20" stroke="#EEEEEE"/>
+<path d="M40 0V200" stroke="#EEEEEE"/>
+<path d="M200 40L-1.49012e-06 40" stroke="#EEEEEE"/>
+<path d="M60 0V200" stroke="#EEEEEE"/>
+<path d="M200 60L-1.49012e-06 60" stroke="#EEEEEE"/>
+<path d="M80 0V200" stroke="#EEEEEE"/>
+<path d="M200 80L-1.49012e-06 80" stroke="#EEEEEE"/>
+<path d="M100 0V200" stroke="#EEEEEE"/>
+<path d="M200 100L-1.49012e-06 100" stroke="#EEEEEE"/>
+<path d="M120 0V200" stroke="#EEEEEE"/>
+<path d="M200 120L-1.49012e-06 120" stroke="#EEEEEE"/>
+<path d="M140 0V200" stroke="#EEEEEE"/>
+<path d="M200 140L-1.49012e-06 140" stroke="#EEEEEE"/>
+<path d="M160 0V200" stroke="#EEEEEE"/>
+<path d="M200 160L-1.49012e-06 160" stroke="#EEEEEE"/>
+<path d="M180 0V200" stroke="#EEEEEE"/>
+<path d="M200 180L-1.49012e-06 180" stroke="#EEEEEE"/>
+<path d="M200 0V200" stroke="#EEEEEE"/>
+<path d="M200 200L-1.49012e-06 200" stroke="#EEEEEE"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M65 50H135V110H75V150H65L65 50ZM75 100H125V60H75V100Z" fill="#951BFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M55 40H145V120H85V160H55V40ZM85 90H115V70H85V90ZM65 50V150H75V110H135V50H65ZM75 100V60H125V100H75ZM55 40H65V50H55V40ZM135 40H145V50H135V40ZM145 110H135V120H145V110Z" fill="#FE19F7"/>
+</g>
+<defs>
+<clipPath id="clip0_15_11095">
+<rect width="200" height="200" rx="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>
