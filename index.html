@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Grid Page</title>
+    <title>$PAINT with Solana</title>
+    <link rel="icon" href="fav.svg" type="image/svg+xml" />
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-    <script data-goatcounter="https://paint.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+    <script
+      data-goatcounter="https://paint.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
     <style>
       * {
         margin: 0;
@@ -275,23 +279,43 @@
 
             gridItem.addEventListener("mouseover", (event) => {
               if (isDrawing) {
-                let color;
-                if (brushColor === "multicolor") {
-                  color = `hsl(${Math.random() * 360}, 70%, 50%)`;
-                } else {
-                  color = brushColor;
-                }
+                paintCell(i);
+              }
+            });
 
-                for (let b = 0; b < brushSize; b++) {
-                  if (gridContainer.children[i + b]) {
-                    gridContainer.children[i + b].style.backgroundColor = color;
-                    gridState[i + b] = color;
-                  }
+            gridItem.addEventListener("touchmove", (event) => {
+              if (isDrawing) {
+                const touch = event.touches[0];
+                const target = document.elementFromPoint(
+                  touch.clientX,
+                  touch.clientY
+                );
+                if (target && target.classList.contains("grid-item")) {
+                  const index = Array.from(gridContainer.children).indexOf(
+                    target
+                  );
+                  paintCell(index);
                 }
-                saveGridState();
               }
             });
           }
+        }
+
+        function paintCell(index) {
+          let color;
+          if (brushColor === "multicolor") {
+            color = `hsl(${Math.random() * 360}, 70%, 50%)`;
+          } else {
+            color = brushColor;
+          }
+
+          for (let b = 0; b < brushSize; b++) {
+            if (gridContainer.children[index + b]) {
+              gridContainer.children[index + b].style.backgroundColor = color;
+              gridState[index + b] = color;
+            }
+          }
+          saveGridState();
         }
 
         createGrid();
@@ -315,6 +339,8 @@
         let isDrawing = false;
         gridContainer.addEventListener("mousedown", () => (isDrawing = true));
         gridContainer.addEventListener("mouseup", () => (isDrawing = false));
+        gridContainer.addEventListener("touchstart", () => (isDrawing = true));
+        gridContainer.addEventListener("touchend", () => (isDrawing = false));
 
         // Clear canvas
         function clearCanvas() {
