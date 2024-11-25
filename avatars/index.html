@@ -245,22 +245,35 @@
         });
 
         exportBtn.addEventListener('click', () => {
-            const resolution = parseInt(resolutionInput.value);
-            if (isNaN(resolution) || resolution < 10) {
-                alert('Please enter a valid resolution.');
-                return;
-            }
-            const tempCanvas = document.createElement('canvas');
-            const tempCtx = tempCanvas.getContext('2d');
-            tempCanvas.width = resolution;
-            tempCanvas.height = resolution;
-            tempCtx.scale(resolution / canvas.width, resolution / canvas.height);
-            tempCtx.drawImage(canvas, 0, 0);
-            const link = document.createElement('a');
-            link.href = tempCanvas.toDataURL('image/png');
-            link.download = 'pixel-art.png';
-            link.click();
-        });
+    const resolution = parseInt(resolutionInput.value);
+    if (isNaN(resolution) || resolution < 10) {
+        alert('Please enter a valid resolution.');
+        return;
+    }
+
+    // Create a temporary canvas
+    const tempCanvas = document.createElement('canvas');
+    const tempCtx = tempCanvas.getContext('2d');
+    tempCanvas.width = resolution;
+    tempCanvas.height = resolution;
+
+    // Fill the background with white
+    tempCtx.fillStyle = '#FFFFFF';
+    tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+    // Scale the original canvas content to fit the new resolution
+    tempCtx.scale(resolution / canvas.width, resolution / canvas.height);
+
+    // Draw the original canvas onto the new canvas
+    tempCtx.drawImage(canvas, 0, 0);
+
+    // Create a download link for the image
+    const link = document.createElement('a');
+    link.href = tempCanvas.toDataURL('image/png');
+    link.download = 'pixel-art.png';
+    link.click();
+});
+
 
         clearBtn.addEventListener('click', () => {
             saveState();
