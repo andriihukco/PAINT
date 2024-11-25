@@ -14,6 +14,8 @@
             padding: 0;
             display: flex;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
@@ -25,6 +27,11 @@
 
         h1 {
             font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            font-size: 12px;
             margin-bottom: 20px;
         }
 
@@ -48,7 +55,6 @@
 
         .control-section {
             display: flex;
-            flex-direction: column;
             gap: 10px;
             align-items: center;
         }
@@ -56,8 +62,8 @@
         label, button, input {
             font-size: 16px;
             font-family: 'Press Start 2P', cursive;
-            background-color: #444;
-            color: #fff;
+            background-color: transparent;
+            color: #000;
             border: 2px solid #000;
             padding: 10px 20px;
             cursor: pointer;
@@ -81,22 +87,31 @@
         button {
             font-size: 18px;
             padding: 12px 24px;
-            background-color: #007bff;
-            border: 2px solid #007bff;
+            background-color: transparent;
+            border: 2px solid #444;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        .outlined {
+            background-color: transparent;
+            border: 2px solid #444;
         }
 
         button:active {
-            background-color: #004085;
+            background-color: #ccc;
         }
 
-        .instructions {
-            font-size: 12px;
-            margin-top: 20px;
-            text-align: center;
+        .export-btn {
+            background-color: #007bff;
+            border: 2px solid #007bff;
+            color: white;
+        }
+
+        .export-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .export-btn:active {
+            background-color: #004085;
         }
     </style>
 </head>
@@ -104,8 +119,7 @@
 
     <div class="container">
         <h1>$PAINT Avatars</h1>
-        
-        
+
         <div class="instructions">
             <p>
                 Instructions:<br>
@@ -119,20 +133,22 @@
 
         <div class="controls">
             <div class="control-section">
-                <label for="colorPicker">Brush Color:</label>
+                Brush Color:
                 <input type="color" id="colorPicker" value="#000000">
             </div>
 
             <div class="control-section">
-                <label for="resolution">Export Resolution:</label>
-                <input type="number" id="resolution" value="1200" min="10" step="10">
+                <button id="undoBtn" class="outlined">Undo</button>
+                <button id="clearBtn" class="outlined">Clear</button>
             </div>
 
             <div class="control-section">
-                <button id="exportBtn">Export as PNG</button>
+                Export Resolution:
+                <input type="number" id="resolution" value="1200" min="10" step="10">
             </div>
-        </div>
 
+            <button id="exportBtn" class="export-btn">Export as PNG</button>
+        </div>
     </div>
 
     <script>
@@ -141,13 +157,32 @@
         const colorPicker = document.getElementById('colorPicker');
         const resolutionInput = document.getElementById('resolution');
         const exportBtn = document.getElementById('exportBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const undoBtn = document.getElementById('undoBtn');
 
         const gridSize = 10;
         let brushColor = colorPicker.value;
         let drawing = false;
         let lastDrawnPixel = null;
 
-        // Draw grid
+        const undoStack = [];
+
+        function saveState() {
+            undoStack.push(canvas.toDataURL());
+            if (undoStack.length > 10) undoStack.shift(); // Limit stack size
+        }
+
+        function restoreState(stack) {
+            if (stack.length > 0) {
+                const img = new Image();
+                img.src = stack.pop();
+                img.onload = () => {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0);
+                };
+            }
+        }
+
         function drawGrid() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.strokeStyle = '#ccc';
@@ -164,13 +199,11 @@
             ctx.stroke();
         }
 
-        // Draw pixel
         function drawPixel(x, y) {
             ctx.fillStyle = brushColor;
             ctx.fillRect(x, y, gridSize, gridSize);
         }
 
-        // Get grid coordinates
         function getGridCoordinates(event) {
             const rect = canvas.getBoundingClientRect();
             const x = Math.floor((event.clientX - rect.left) / gridSize) * gridSize;
@@ -178,40 +211,15 @@
             return { x, y };
         }
 
-        // Draw straight line between two points
-        function drawLine(x0, y0, x1, y1) {
-            const dx = Math.abs(x1 - x0);
-            const dy = Math.abs(y1 - y0);
-            const sx = x0 < x1 ? gridSize : -gridSize;
-            const sy = y0 < y1 ? gridSize : -gridSize;
-            let err = dx - dy;
-
-            while (true) {
-                drawPixel(x0, y0);
-                if (x0 === x1 && y0 === y1) break;
-                const e2 = 2 * err;
-                if (e2 > -dy) {
-                    err -= dy;
-                    x0 += sx;
-                }
-                if (e2 < dx) {
-                    err += dx;
-                    y0 += sy;
-                }
-            }
-        }
-
-        // Event listeners
         canvas.addEventListener('mousedown', (e) => {
             drawing = true;
+            saveState();
             const { x, y } = getGridCoordinates(e);
-
             if (e.shiftKey && lastDrawnPixel) {
                 drawLine(lastDrawnPixel.x, lastDrawnPixel.y, x, y);
             } else {
                 drawPixel(x, y);
             }
-
             lastDrawnPixel = { x, y };
         });
 
@@ -232,35 +240,52 @@
             drawPixel(x, y);
         });
 
-        // Update brush color
         colorPicker.addEventListener('input', (e) => {
             brushColor = e.target.value;
         });
 
-        // Export canvas
         exportBtn.addEventListener('click', () => {
             const resolution = parseInt(resolutionInput.value);
             if (isNaN(resolution) || resolution < 10) {
                 alert('Please enter a valid resolution.');
                 return;
             }
-
             const tempCanvas = document.createElement('canvas');
             const tempCtx = tempCanvas.getContext('2d');
-
             tempCanvas.width = resolution;
             tempCanvas.height = resolution;
-
             tempCtx.scale(resolution / canvas.width, resolution / canvas.height);
             tempCtx.drawImage(canvas, 0, 0);
-
             const link = document.createElement('a');
             link.href = tempCanvas.toDataURL('image/png');
             link.download = 'pixel-art.png';
             link.click();
         });
 
-        // Initial setup
+        clearBtn.addEventListener('click', () => {
+            saveState();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawGrid();
+        });
+
+        undoBtn.addEventListener('click', () => restoreState(undoStack));
+
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('canvasState', canvas.toDataURL());
+        });
+
+        window.addEventListener('load', () => {
+            const savedState = localStorage.getItem('canvasState');
+            if (savedState) {
+                const img = new Image();
+                img.src = savedState;
+                img.onload = () => {
+                    ctx.drawImage(img, 0, 0);
+                };
+            }
+            drawGrid();
+        });
+
         drawGrid();
     </script>
 
